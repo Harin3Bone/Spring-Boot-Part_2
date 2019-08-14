@@ -5,7 +5,6 @@ import com.practice.demo.entity.Employee;
 import java.util.List;
 
 public class EmployeeServiceImpl implements EmployeeService {
-
     @Override
     public List<Employee> findAll() {
         return null;
@@ -22,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void delete(int theId) {
+    public void deleteById(int theId) {
 
     }
 }

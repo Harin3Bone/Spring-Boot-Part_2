@@ -36,7 +36,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee findByid(int theId) {
+    public Employee findById(int theId) {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
@@ -57,7 +57,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
     }
 
     @Override
-    public void delete(int theId) {
+    public void deleteById(int theId) {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 

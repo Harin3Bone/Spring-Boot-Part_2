@@ -12,7 +12,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee findByid(int theId) {
+    public Employee findById(int theId) {
         return null;
     }
 

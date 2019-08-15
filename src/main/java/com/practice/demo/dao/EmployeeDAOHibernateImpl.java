@@ -22,16 +22,18 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
     }
 
     @Override
-    public List<Employee> findAll(){
+    public List<Employee> findAll() {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
+
         // create a query
         Query<Employee> theQuery =
-                currentSession.createQuery("from Employee",Employee.class);
+                currentSession.createQuery("from Employee", Employee.class);
+
         // execute query and get result list
         List<Employee> employees = theQuery.getResultList();
 
-        // return the result
+        // return the results
         return employees;
     }
 

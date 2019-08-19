@@ -43,7 +43,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
     @Override
     public void save(Employee theEmployee) {
-        // saveor update the employee
+        // save or update the employee [if id == 0 save] [else update]
         Employee dbEmployee = entityManager.merge(theEmployee);
 
         // update with id from db ... so we can get generated id for save/insert
@@ -53,8 +53,10 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
     @Override
     public void deleteById(int theId) {
         // delete object with primary key
-        Query theQuery= entityManager.createQuery("delete from Employee where id=employeeId");
+        Query theQuery= entityManager.createQuery("delete from Employee where id=:employeeId");
 
         theQuery.setParameter("employeeId",theId);
+
+        theQuery.executeUpdate();
     }
 }
